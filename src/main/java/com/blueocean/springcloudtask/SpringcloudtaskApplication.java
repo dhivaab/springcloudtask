@@ -10,59 +10,14 @@ import org.springframework.cloud.task.listener.TaskExecutionListener;
 import org.springframework.cloud.task.repository.TaskExecution;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @EnableTask
 @EnableBatchProcessing
 public class SpringcloudtaskApplication {
 
 	public static void main(String[] args) {
+		System.out.println("here is your ouput" + args[0]);
 		SpringApplication.run(SpringcloudtaskApplication.class, args);
 	}
-	
-	/*@Bean
-	public GreetingTask greetingtask() {
-		return new GreetingTask();
-	}
-	@Bean
-	public GreetingTask1 greetingtask1() {
-		return new GreetingTask1();
-	}
-
-
-	public static class GreetingTask implements CommandLineRunner, TaskExecutionListener {
-
-		@Override
-		public void run(String... args) throws Exception {
-			System.out.println("Hello World");
-		}
-
-		@Override
-		public void onTaskStartup(TaskExecution taskExecution) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onTaskEnd(TaskExecution taskExecution) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onTaskFailed(TaskExecution taskExecution, Throwable throwable) {
-			// TODO Auto-generated method stub
-			
-		}
-
-	}
-	public static class GreetingTask1 implements CommandLineRunner {
-
-		@Override
-		public void run(String... args) throws Exception {
-			System.out.println("Hello World1");
-		}
-
-	}
-	*/
 
 }
